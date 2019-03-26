@@ -1,3 +1,10 @@
+AWS
+server name: cgimsdb.ch7esggcgnro.us-east-1.rds.amazonaws.com
+db name:cgimsdb
+user:root
+password: awsrps123 
+
+
 
 
 
