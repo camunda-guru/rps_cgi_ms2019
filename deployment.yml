@@ -1,0 +1,27 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+   name: k8s-spring-sample-deploy
+spec:
+   replicas: 3
+   selector:
+      matchLabels:
+         app: k8s-spring-sample
+   minReadySeconds: 20
+   strategy:
+      type: RollingUpdate
+      rollingUpdate:
+         maxUnavailable: 1
+         maxSurge: 1
+   template:
+      metadata:
+         labels:
+            app: k8s-spring-sample
+      spec:
+         containers:
+         - name: kychubrepo
+           image: eswaribala/rpsdockerhubdemo:kychubrepo
+           ports:
+           - containerPort: 7070
+           imagePullPolicy: Always 
+             
